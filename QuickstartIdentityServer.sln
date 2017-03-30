@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FDC821CE-8826-47DE-B272-97D8CC05C9D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{497C2DB3-99CA-46CC-9F4C-2E397392EDAF}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "QuickstartIdentityServer", "src\QuickstartIdentityServer\QuickstartIdentityServer.xproj", "{38D3AA9C-EC77-44AD-B0BC-6A979D9224CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38D3AA9C-EC77-44AD-B0BC-6A979D9224CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D3AA9C-EC77-44AD-B0BC-6A979D9224CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D3AA9C-EC77-44AD-B0BC-6A979D9224CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D3AA9C-EC77-44AD-B0BC-6A979D9224CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38D3AA9C-EC77-44AD-B0BC-6A979D9224CB} = {FDC821CE-8826-47DE-B272-97D8CC05C9D4}
+	EndGlobalSection
+EndGlobal
