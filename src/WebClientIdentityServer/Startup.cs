@@ -57,6 +57,12 @@ namespace WebClientIdentityServer
                 RequireHttpsMetadata = false,
 
                 ClientId = "mvc",
+                ClientSecret = "secret",
+
+                ResponseType = "code id_token",
+                Scope = { "ApiIdentity", "offline_access" },
+
+                GetClaimsFromUserInfoEndpoint = true,
                 SaveTokens = true
             });
 
