@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 
-namespace QuickstartIdentityServer
+namespace WebClientIdentityServer
 {
     public class Program
     {
@@ -13,7 +13,7 @@ namespace QuickstartIdentityServer
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .UseUrls("http://localhost:5000")
+                .UseUrls("http://localhost:5002")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
