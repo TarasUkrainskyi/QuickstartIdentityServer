@@ -40,8 +40,13 @@ namespace IdentityServerWithAspNetIdentity
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationDbContext>(
+                options =>
+                {
+                    //options.UseMySQL(Configuration.GetConnectionString("ThinkLiveChatDbLocalhostMySqlConnection"));
+                    options.UseSqlServer(Configuration.GetConnectionString("ThinkLiveChatDbLocalhostSqlServerConnection"));
+                });
+                
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -52,6 +57,14 @@ namespace IdentityServerWithAspNetIdentity
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            // Adds IdentityServer
+            services.AddIdentityServer()
+                .AddTemporarySigningCredential()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryApiResources(Config.GetApiResources())
+                .AddInMemoryClients(Config.GetClients())
+                .AddAspNetIdentity<ApplicationUser>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +87,9 @@ namespace IdentityServerWithAspNetIdentity
             app.UseStaticFiles();
 
             app.UseIdentity();
+
+            // Adds IdentityServer
+            app.UseIdentityServer();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
