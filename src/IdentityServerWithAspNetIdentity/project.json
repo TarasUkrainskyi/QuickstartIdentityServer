@@ -44,7 +44,8 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "IdentityServer4.AspNetIdentity": "1.0.1"
+    "IdentityServer4.AspNetIdentity": "1.0.1",
+    "Microsoft.AspNetCore.Authentication.Google": "1.1.1"
   },
 
   "tools": {

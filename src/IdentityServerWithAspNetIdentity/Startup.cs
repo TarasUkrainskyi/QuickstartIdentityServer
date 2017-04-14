@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using IdentityServerWithAspNetIdentity.Data;
 using IdentityServerWithAspNetIdentity.Models;
 using IdentityServerWithAspNetIdentity.Services;
+using IdentityServer4;
 
 namespace IdentityServerWithAspNetIdentity
 {
@@ -92,6 +93,16 @@ namespace IdentityServerWithAspNetIdentity
             app.UseIdentityServer();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
+
+            app.UseGoogleAuthentication(
+                new GoogleOptions
+                {
+                    AuthenticationScheme = "Google",
+                    DisplayName = "Google",
+                    SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme,
+                    ClientId = "232976589502-n1dhpu3lb3apnbfhn76h2fcqosefms9k.apps.googleusercontent.com",
+                    ClientSecret = "pPG_yLd3wzE6jbPxCfh5tbnf"
+                });
 
             app.UseMvc(routes =>
             {
